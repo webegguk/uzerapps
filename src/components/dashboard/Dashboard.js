@@ -3,9 +3,6 @@ import User from '../user';
 import './Dashboard.css';
 
 class Dashboard extends React.Component {
-    // Making use of transform-class-properties property initializers here
-    // No need to bind `this` to the updateSearch arrow function
-    // Constructor also not needed
 
     state = {
         search: ''

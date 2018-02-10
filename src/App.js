@@ -4,6 +4,10 @@ import Dashboard from './components/dashboard';
 
 class App extends Component {
 
+    // Making use of transform-class-properties property initializers here
+    // No need to bind `this` to the updateSearch arrow function
+    // Constructor also not needed
+    
   state = {
     results: [],
     _loaded: false,

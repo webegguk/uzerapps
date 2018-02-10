@@ -12,7 +12,8 @@ class AppRating extends React.Component {
         ratingOnHover: null
     }
 
-    ratingDbKey = null; // if voted, stores the id internally so it can be changed
+    // if voted, stores the id internally so it can be changed
+    ratingDbKey = null;
 
 
     render() {
@@ -33,7 +34,6 @@ class AppRating extends React.Component {
         }
         // add a button to clear the rating completely
         if (this.state.rating !== 0) {
-            console.log(this.state.rating)
             clear.push(
                 <i
                     key={this.state.rating}
@@ -53,7 +53,7 @@ class AppRating extends React.Component {
             </div>
         )
     }
-    
+
     _setRating = (rating) => {
         this.setState({
             rating
@@ -76,12 +76,12 @@ class AppRating extends React.Component {
     // updates the rating in the database
     _updateRating = (rating) => {
         const ratingsPath = `/accounts/${this.props.accountId}/apps/${this.props.appId}/ratings/`;
-        // a little imitation of user auth within the app's lifespan
         if (this.ratingDbKey === null) {
-            // if the user has not voted, push a new rating and keep its key to let them change it
+            // add a new key each time a user votes within the current lifespan of the app
+            // This gives them the ability to change their mind
             this.ratingDbKey = fire.database().ref(ratingsPath).push({ rating }).key;
         } else {
-            // if the user has just voted, let them quickly change their mind
+            // set the value in the firebase database
             fire.database().ref(ratingsPath + this.ratingDbKey).set({ rating });
         }
     }
