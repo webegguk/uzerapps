@@ -1,0 +1,56 @@
+body {
+    background: #f8f8f8;
+    .ui.segment {
+        .ui.inverted.dimmer {
+            background-color: #f8f8f8;
+        }
+        border: 0;
+        box-shadow: none;
+        padding-top: 40%;
+    }
+}
+
+.dashboard {
+    opacity: 1;
+    animation-name: fadeInOpacity;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 0.3s;
+    margin: 0 auto;
+    max-width: 620px;
+    background: #fff;
+    padding: 25px;
+    .ui.input.focus input,
+    .ui.input input:focus {
+        border-color: #999;
+    }
+    .bolt {
+        float: right;
+        width: 25px;
+        padding:5px;
+    }
+    .ui.items {
+        .header {
+            padding-bottom: 10px;
+        }
+        .item {
+            border-bottom: none;
+            background: #f9f9f9;
+            box-shadow: 1px 1px 1px #f1f1f1;
+            padding: 15px 15px 35px 15px;
+            border-radius: 5px;
+            &:last-child {
+                border: 0;
+            }
+        }
+    }
+}
+
+@keyframes fadeInOpacity {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
