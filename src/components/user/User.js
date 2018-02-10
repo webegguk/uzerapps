@@ -22,7 +22,7 @@ class User extends React.Component {
                 </div>
                 <div class='content'>
                     <div class='header'>
-                        {this.props.user.name}'s Apps
+                        {this.props.user.name}{"'"}s Apps
                         <span className='acc-id right floated'>{this.props.user.account}</span>
                     </div> {/* get user name passed down from <Dashboard /> via prop */}
 
