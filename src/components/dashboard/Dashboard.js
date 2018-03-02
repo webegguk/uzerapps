@@ -20,25 +20,25 @@ class Dashboard extends React.Component {
     render() {
         if (!this.props.loaded) {
             return (
-                <div class="ui segment">
-                    <div class="ui active inverted dimmer">
-                        <div class="ui text loader">Loading</div>
+                <div className="ui segment">
+                    <div className="ui active inverted dimmer">
+                        <div className="ui text loader">Loading</div>
                     </div>
                 </div>
             )
         } else {
             return (
                 <div className='dashboard'>
-                    <div class="ui search">
-                        <div class="ui icon input">
+                    <div className="ui search">
+                        <div className="ui icon input">
                             <input
                                 className="prompt"
                                 placeholder="Search users..."
                                 autoComplete="off"
                                 onChange={this.updateSearch} />
-                            <i class="search icon"></i>
+                            <i className="search icon"></i>
                         </div>
-                        <div class="results"></div>
+                        <div className="results"></div>
                         <img src={'/img/bolt.png'} className='bolt' alt='' />
                     </div>
                     

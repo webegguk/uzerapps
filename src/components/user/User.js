@@ -17,11 +17,11 @@ class User extends React.Component {
     render() {
         return (
             <div className='item'>
-                <div class='ui tiny image'>
+                <div className='ui tiny image'>
                     <img src={'/img/' + this.props.user.name.replace(/\s+/g, '-').toLowerCase() + '.png'} alt='' />  {/* TODO:// A dynamic profile image would be nice */}
                 </div>
-                <div class='content'>
-                    <div class='header'>
+                <div className='content'>
+                    <div className='header'>
                         {this.props.user.name}{"'"}s Apps
                         <span className='acc-id right floated'>{this.props.user.account}</span>
                     </div> {/* get user name passed down from <Dashboard /> via prop */}
@@ -32,7 +32,7 @@ class User extends React.Component {
                                 <span>
                                     {app.title}
                                 </span>
-                                <span class='right floated'>
+                                <span className='right floated'>
                                     <AppRating
                                         accountId={this.props.user.account}
                                         appId={app.id}
